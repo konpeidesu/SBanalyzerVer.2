@@ -1,0 +1,13 @@
+flask               # Webサーバーフレームワーク
+flask-cors          # CORS設定（フロントエンドからのアクセス許可）
+boto3               # AWS（S3）との連携用ライブラリ
+opencv-python       # 画像処理（板の角度やトリミングなど）
+mediapipe           # 関節検出ライブラリ
+numpy               # 数値計算
+pandas              # データ分析（必要に応じて）
+requests            # HTTPリクエスト（API呼び出しなど）
+python-dotenv       # .envファイルから環境変数を読み込む
+openai              # ChatGPT APIを呼び出すためのライブラリ
+scipy               # 数値計算ライブラリ（必要に応じて
+tensorflow          # モデルの推論に使用（必要に応じて）
+keras               # モデルの推論に使用（必要に応じて）
